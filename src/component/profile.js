@@ -233,16 +233,6 @@ const Profile = () => {
                                         }}>
 
                                         </img>
-                                    </>
-                                    :
-                                    <>
-                                        <img src={item?.image} alt='' style={{
-                                            width: '280px',
-                                            height: '345px',
-                                            marginTop: '70px'
-                                        }}>
-
-                                        </img>
                                         <Form.Control
                                             type="file"
                                             id="image"
@@ -258,6 +248,17 @@ const Profile = () => {
                                             backgroundColor: '#FF6185',
                                             marginTop: '-70px',
                                         }}>Change Photo Profile</Button>
+                                    </>
+                                    :
+                                    <>
+                                        <img src={item?.image} alt='' style={{
+                                            width: '280px',
+                                            height: '345px',
+                                            marginTop: '70px'
+                                        }}>
+
+                                        </img>
+                                       
                                     </>
                                     }
 

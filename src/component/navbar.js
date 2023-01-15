@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/appstyle.css"
 import Icon from "../assets/image/icon_corona.png";
 import { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
 import { useMutation } from "react-query";
@@ -127,7 +127,7 @@ const NavigationBar = () => {
         window.location.reload();
     };
 
-    let {data : navImage } = useQuery('navImage', async () => {
+    let { data: navImage } = useQuery('navImage', async () => {
         const response = await API.get('/users')
         return response.data.data
     })
@@ -137,7 +137,7 @@ const NavigationBar = () => {
             <Navbar className="test">
                 <Container>
                     <Navbar.Brand >
-                        <img src={Icon} alt="Icon" className="img1" onClick={()=> navigate('/')}/>
+                        <img src={Icon} alt="Icon" className="img1" onClick={() => navigate('/')} />
                     </Navbar.Brand>
                     <Navbar.Collapse className="nav justify-content-end" style={{
                         paddingTop: '18px'
@@ -153,11 +153,19 @@ const NavigationBar = () => {
                                         }}>
                                             {navImage.map((item) => {
                                                 if (item.id === state.user.id) {
-                                                    return <img src={item.image} alt="" style={{
-                                                        width: '60px',
-                                                        height: '60px',
-                                                        borderRadius: '50%',
-                                                    }} />
+                                                    if (item.image === "") {
+                                                        return <img src={ImageNav} alt="" style={{
+                                                            width: '60px',
+                                                            height: '60px',
+                                                            borderRadius: '50%',
+                                                        }} />
+                                                    } else {
+                                                        return <img src={item.image} alt="" style={{
+                                                            width: '60px',
+                                                            height: '60px',
+                                                            borderRadius: '50%',
+                                                        }} />
+                                                    }
                                                 }
                                             })}
                                         </Dropdown.Toggle>
@@ -187,11 +195,19 @@ const NavigationBar = () => {
                                         }}>
                                             {navImage.map((item) => {
                                                 if (item.id === state.user.id) {
-                                                    return <img src={item.image} alt="" style={{
-                                                        width: '60px',
-                                                        height: '60px',
-                                                        borderRadius: '50%',
-                                                    }} />
+                                                    if (item.image === "") {
+                                                        return <img src={DoctorNav} alt="" style={{
+                                                            width: '60px',
+                                                            height: '60px',
+                                                            borderRadius: '50%',
+                                                        }} />
+                                                    } else {
+                                                        return <img src={item.image} alt="" style={{
+                                                            width: '60px',
+                                                            height: '60px',
+                                                            borderRadius: '50%',
+                                                        }} />
+                                                    }
                                                 }
                                             })}
                                         </Dropdown.Toggle>
