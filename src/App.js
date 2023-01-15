@@ -24,6 +24,7 @@ if (localStorage.token) {
 
 function App() {
   const [state, dispatch] = useContext(UserContext)
+  console.clear()
   console.log(state)  
 
   const checkUser = async () => {
