@@ -154,7 +154,7 @@ const NavigationBar = () => {
                                             {navImage.map((item) => {
                                                 if (item.id === state.user.id) {
                                                     if (item.image === "") {
-                                                        return <img src={ImageNav} alt="" style={{
+                                                        return <img src={DoctorNav} alt="" style={{
                                                             width: '60px',
                                                             height: '60px',
                                                             borderRadius: '50%',
@@ -196,7 +196,7 @@ const NavigationBar = () => {
                                             {navImage.map((item) => {
                                                 if (item.id === state.user.id) {
                                                     if (item.image === "") {
-                                                        return <img src={DoctorNav} alt="" style={{
+                                                        return <img src={ImageNav} alt="" style={{
                                                             width: '60px',
                                                             height: '60px',
                                                             borderRadius: '50%',
