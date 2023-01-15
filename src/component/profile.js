@@ -256,9 +256,22 @@ const Profile = () => {
                                             height: '345px',
                                             marginTop: '70px'
                                         }}>
-
                                         </img>
-                                       
+                                        <Form.Control
+                                            type="file"
+                                            id="image"
+                                            className="form-input input-image"
+                                            name="image"
+                                            onChange={handleSubmitImage.mutate}
+                                        />
+                                        <Button onClick={() => {
+                                            document.getElementById("image").click();
+                                        }} style={{
+                                            width: '100%',
+                                            marginTop: '20px',
+                                            backgroundColor: '#FF6185',
+                                            marginTop: '-70px',
+                                        }}>Change Photo Profile</Button>
                                     </>
                                     }
 
