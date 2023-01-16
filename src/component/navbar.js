@@ -127,7 +127,7 @@ const NavigationBar = () => {
         window.location.reload();
     };
 
-    let { data: navImage } = useQuery('navImage', async () => {
+    let { data: navImage } = useQuery('ProfileCache', async () => {
         const response = await API.get('/users')
         return response.data.data
     })
